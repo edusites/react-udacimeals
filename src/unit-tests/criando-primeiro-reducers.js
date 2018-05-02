@@ -13,6 +13,15 @@
  * [{ flavor: 'Chocolate', count: 36 }, { flavor: 'Vanilla', count: 210 }];
 */
 
+const appReducer = (state, action) => {
+    
+  switch(action.type){
+    case 'DELETE_FLAVOR':
+      return state.filter(obj => obj.flavor !== action.flavor);
+    default:
+      return state;
+  }
+}
 
 /**
  * Segundo o enunciado do exercicio devemos criar um appReducer
