@@ -11,6 +11,7 @@ const store = createStore(
   reducer,
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );
+console.log(store.getState())
 /**
  * Para evitar de descer todos os subcomponents para passar a store
  * criada com o createStore do redux quando um subcomponentes desses
@@ -22,9 +23,7 @@ const store = createStore(
  * subcomponetes do React.
  */
 ReactDOM.render(
-  <Provider store={store}>
-    <App/>
-  </Provider>,
+  <App store={store}/>,
   document.getElementById('root')
 );
 registerServiceWorker();
